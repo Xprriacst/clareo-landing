@@ -96,6 +96,13 @@
       .macbook-shadow {
         box-shadow: 0 50px 100px -20px rgba(0,0,0,0.25), 0 30px 60px -30px rgba(0,0,0,0.3);
       }
+      #lang-switcher button { transition: all 0.2s ease; }
+      #lang-switcher button.lang-active {
+        background: #ffffff;
+        color: #004ac6;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      }
+      html[lang="zh"] body { font-family: 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
@@ -121,7 +128,7 @@
 <section class="relative px-4 sm:px-8 pt-10 lg:pt-16 pb-16 lg:pb-32 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 <div class="lg:col-span-7 flex flex-col items-start text-left">
 <span class="text-primary font-bold tracking-widest mb-6 uppercase text-sm">L'intelligence au service du goût</span>
-<h1 class="font-headline text-3xl sm:text-4xl lg:text-[3.5rem] leading-[1.1] font-extrabold tracking-tighter text-on-surface mb-6 lg:mb-8">
+<h1 data-i18n-html="hero-h1" class="font-headline text-3xl sm:text-4xl lg:text-[3.5rem] leading-[1.1] font-extrabold tracking-tighter text-on-surface mb-6 lg:mb-8">
                     Optimisez la gestion<br class="hidden sm:block"/> de votre <span class="text-primary italic">restaurant</span>.
                 </h1>
 <div class="flex flex-col gap-3 mb-10">
@@ -177,7 +184,7 @@
 <section class="py-16 lg:py-32 px-4 sm:px-8 max-w-7xl mx-auto">
 <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 <div>
-<h2 class="font-headline text-4xl lg:text-5xl font-bold tracking-tight mb-8">Aujourd'hui, piloter ses coûts en restaurant, c'est un <span class="text-error">cauchemar</span>.</h2>
+<h2 data-i18n-html="problem-h2" class="font-headline text-4xl lg:text-5xl font-bold tracking-tight mb-8">Aujourd'hui, piloter ses coûts en restaurant, c'est un <span class="text-error">cauchemar</span>.</h2>
 <div class="space-y-6">
 <div class="flex gap-4 p-6 rounded-2xl bg-error-container/20">
 <span class="material-symbols-outlined text-error" data-weight="fill">error</span>
@@ -442,7 +449,7 @@
 <img alt="Happy restaurant team" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPKOrbLFGQCmO-lEC8PREAw1F1pP2N7j8vNu3flDfxlFmpCWcLLy-0I_sh4dgoANko3VlDmZ_4MtJWWh9qiCKxcZdt1OHdHhBIHn06SgFPQjtCdHwW0aGoR7JUpmjIpuFIxO7162ti9dE6HXpN4Z4UekLFnC3BDRL7OfwnFMB4pN2_SWnz0JZrHYl7g__jwHZceUDbFwqbwp0nb5ZZ-JbH-U3K-w01iqvcic3T9kU274JofNw8bysi9XxKsKAMmUL5TDARQHIyrhc"/>
 </div>
 <div class="relative z-10">
-<h2 class="font-headline text-4xl lg:text-5xl font-bold mb-8">Un restaurant qui fait 500 000 € de CA... <br class="hidden md:block"/> c'est <span class="text-primary-fixed">15 000 € de plus</span> par an dans sa poche.</h2>
+<h2 data-i18n-html="cta-h2" class="font-headline text-4xl lg:text-5xl font-bold mb-8">Un restaurant qui fait 500 000 € de CA... <br class="hidden md:block"/> c'est <span class="text-primary-fixed">15 000 € de plus</span> par an dans sa poche.</h2>
 <p class="text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">Rejoignez les 400+ restaurateurs qui ont arrêté de naviguer à vue et ont repris le contrôle de leurs marges.</p>
 <div class="flex flex-col sm:flex-row gap-6 justify-center">
 <button class="bg-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-primary-container transition-all">Réserver une démo gratuite</button>
@@ -454,6 +461,13 @@
 </main>
 <!-- Footer -->
 <footer class="bg-surface py-12 px-8 border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto mb-8 flex justify-center">
+<div id="lang-switcher" class="inline-flex items-center gap-1 p-1 bg-surface-container rounded-full">
+<button data-lang="fr" type="button" class="px-4 py-1.5 rounded-full text-sm font-semibold text-slate-600 font-lexend">FR</button>
+<button data-lang="en" type="button" class="px-4 py-1.5 rounded-full text-sm font-semibold text-slate-600 font-lexend">EN</button>
+<button data-lang="zh" type="button" class="px-4 py-1.5 rounded-full text-sm font-semibold text-slate-600 font-lexend">中文</button>
+</div>
+</div>
 <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto font-inter text-sm tracking-wide">
 <div class="flex items-center gap-2 text-xl font-bold text-slate-900 font-lexend">
                 <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL' 1">explore</span>
@@ -465,7 +479,174 @@
 <a class="text-slate-500 hover:text-primary transition-all" href="#">Contact Us</a>
 <a class="text-slate-500 hover:text-primary transition-all" href="#">Documentation</a>
 </div>
-<p class="text-slate-500">© 2024 Clareo Solutions. All rights reserved.</p>
+<p class="text-slate-500">© 2026 Clareo Solutions. All rights reserved.</p>
 </div>
 </footer>
+<script>
+(function () {
+  const TEXT = {
+    "by Clareo Solutions": { en: "by Clareo Solutions", zh: "由 Clareo Solutions 提供" },
+    "Fonctionnement": { en: "How it works", zh: "运作方式" },
+    "Tarifs": { en: "Pricing", zh: "价格" },
+    "Essayer gratuitement": { en: "Try for free", zh: "免费试用" },
+    "L'intelligence au service du goût": { en: "Intelligence in the service of taste", zh: "智能服务于美味" },
+    "Marges augmentées": { en: "Higher margins", zh: "利润提升" },
+    "Charge mentale réduite": { en: "Less mental load", zh: "心理负担减轻" },
+    "Gaspillage qui disparaît": { en: "Waste that disappears", zh: "浪费消失" },
+    "Voir une démo": { en: "Watch a demo", zh: "观看演示" },
+    "Jusqu'à": { en: "Up to", zh: "高达" },
+    "6 points": { en: "6 points", zh: "6 个百分点" },
+    "de food cost économisés grâce à la détection immédiate des hausses de prix fournisseurs.": { en: "of food cost saved thanks to instant detection of supplier price hikes.", zh: "节省食材成本，得益于即时检测供应商涨价。" },
+    "20 h/mois": { en: "20 h/month", zh: "每月 20 小时" },
+    "de saisie manuelle supprimées. Plus de temps pour vos équipes et vos clients.": { en: "of manual data entry eliminated. More time for your teams and your customers.", zh: "省去手动录入，给您的团队和客户更多时间。" },
+    "70k €/an": { en: "€70k/year", zh: "7 万欧元 / 年" },
+    "de rentabilité récupérable pour un établissement moyen réalisant 800k€ de CA.": { en: "of recoverable profit for an average venue with €800k in revenue.", zh: "可挽回的利润，针对年营业额 80 万欧元的中型餐厅。" },
+    "* Estimations basées sur les moyennes du secteur de la restauration (sources : UMIH, Gira Conseil, données internes).": { en: "* Estimates based on restaurant industry averages (sources: UMIH, Gira Conseil, internal data).", zh: "* 基于餐饮行业平均水平的估算（来源：UMIH、Gira Conseil、内部数据）。" },
+    "Factures électroniques dispersées, introuvables, jamais à jour.": { en: "Electronic invoices scattered, impossible to find, never up to date.", zh: "电子发票分散、找不到、从不更新。" },
+    "Fichiers Excel complexes, jamais à jour, source d'erreurs.": { en: "Complex Excel files, never up to date, a source of errors.", zh: "Excel 文件复杂、从不更新、错误源头。" },
+    "Hausse des prix fournisseurs invisible jusqu'au bilan comptable.": { en: "Supplier price increases invisible until the accounting close.", zh: "供应商涨价直到结算才被发现。" },
+    "Fonctionnement en 3 étapes": { en: "How it works in 3 steps", zh: "三步操作" },
+    "Cockpit s'occupe de tout, vous vous occupez de votre cuisine.": { en: "Cockpit handles everything, you take care of your kitchen.", zh: "Cockpit 处理一切，您只需专注厨房。" },
+    "Déposez vos factures": { en: "Drop in your invoices", zh: "上传您的发票" },
+    "Importez vos PDF ou prenez une photo. Glissez-déposez, c'est tout ce qu'on vous demande.": { en: "Upload your PDFs or snap a photo. Drag and drop — that's all we ask.", zh: "导入 PDF 或拍照，拖放即可，仅此而已。" },
+    "L'IA analyse tout": { en: "AI analyzes everything", zh: "AI 分析一切" },
+    "Notre intelligence artificielle extrait chaque ligne, vérifie les prix et standardise les unités.": { en: "Our AI extracts every line, checks prices and standardizes units.", zh: "我们的人工智能提取每一行，核对价格并标准化单位。" },
+    "Pilotez en direct avec votre assistant 24/24": { en: "Steer live with your 24/7 assistant", zh: "与您的全天候助手实时协作" },
+    "Vos fiches techniques se mettent à jour. Posez une question à votre chatbot IA à tout moment — alerte immédiate si un fournisseur augmente ses prix.": { en: "Your recipe sheets update automatically. Ask your AI chatbot anything, anytime — instant alert if a supplier raises prices.", zh: "您的菜谱卡自动更新。随时向 AI 聊天机器人提问 — 供应商涨价时立即提醒。" },
+    "Un cockpit complet pour votre rentabilité": { en: "A complete cockpit for your profitability", zh: "全面的利润驾驶舱" },
+    "Visualisez instantanément vos performances et agissez là où ça compte, sur une interface conçue pour la clarté.": { en: "Instantly visualize your performance and act where it matters, on an interface designed for clarity.", zh: "立即可视化业绩，在关键之处采取行动，界面专为清晰而设计。" },
+    "Analyse par plat": { en: "Per-dish analysis", zh: "按菜品分析" },
+    "Rentabilité par portion précise": { en: "Precise profitability per portion", zh: "每份精确利润" },
+    "Historique d'achat des ingrédients": { en: "Ingredient purchase history", zh: "食材采购历史" },
+    "Suivi fournisseurs": { en: "Supplier tracking", zh: "供应商跟踪" },
+    "Répartition des dépenses live": { en: "Live spending breakdown", zh: "实时支出分布" },
+    "Alertes prix automatisées": { en: "Automated price alerts", zh: "自动价格提醒" },
+    "Assistant IA 24/7": { en: "24/7 AI assistant", zh: "全天候 AI 助手" },
+    "Votre assistant resto dans la poche": { en: "Your restaurant assistant in your pocket", zh: "餐厅助手随身携带" },
+    "Posez vos questions à tout moment, où que vous soyez. L'agent IA mobile analyse vos données en temps réel et vous donne des réponses précises instantanément.": { en: "Ask questions anytime, anywhere. The mobile AI agent analyzes your data in real time and gives you precise answers instantly.", zh: "随时随地提问。移动 AI 实时分析您的数据，立即给出准确答案。" },
+    "Questions en langage naturel": { en: "Natural-language questions", zh: "自然语言提问" },
+    "« Quel plat devrait retirer du menu ? » — Réponse immédiate basée sur vos marges réelles.": { en: '"Which dish should I drop from the menu?" — Instant answer based on your real margins.', zh: "「应该从菜单上撤掉哪道菜？」— 基于真实利润的即时回答。" },
+    "Alertes proactives": { en: "Proactive alerts", zh: "主动提醒" },
+    "Notification instantanée si un fournisseur augmente ses prix ou si une marge chute.": { en: "Instant notification if a supplier raises prices or a margin drops.", zh: "供应商涨价或利润下降时立即通知。" },
+    "Analyses personnalisées": { en: "Personalized analyses", zh: "个性化分析" },
+    "Recommandations adaptées à votre établissement et votre historique.": { en: "Recommendations tailored to your venue and history.", zh: "针对您的餐厅和历史数据的定制建议。" },
+    "Tester l'assistant IA": { en: "Try the AI assistant", zh: "测试 AI 助手" },
+    '"Ma comptable le fait déjà"': { en: '"My accountant already does that"', zh: '"我的会计已经在做了"' },
+    "Fonctionnalité": { en: "Feature", zh: "功能" },
+    "Comptable Classique": { en: "Traditional accountant", zh: "传统会计" },
+    "Fréquence de mise à jour": { en: "Update frequency", zh: "更新频率" },
+    "Tous les mois ou trimestres": { en: "Monthly or quarterly", zh: "每月或每季度" },
+    "Temps réel (H+24)": { en: "Real-time (H+24)", zh: "实时 (H+24)" },
+    "Détail des ingrédients": { en: "Ingredient detail", zh: "食材明细" },
+    "Montant global HT/TTC": { en: "Aggregate amount excl./incl. VAT", zh: "税前/税后总金额" },
+    "Chaque ligne détaillée par unité": { en: "Every line detailed by unit", zh: "每行按单位详细列出" },
+    "Calcul de marge brute plat/plat": { en: "Per-dish gross margin calculation", zh: "各菜品毛利计算" },
+    "Impossible": { en: "Not possible", zh: "不可行" },
+    "Automatique": { en: "Automatic", zh: "自动" },
+    "Alertes hausses de prix": { en: "Price-hike alerts", zh: "涨价提醒" },
+    "Aucune": { en: "None", zh: "无" },
+    "Notification immédiate": { en: "Instant notification", zh: "即时通知" },
+    "Assistant / Chatbot IA": { en: "AI assistant / Chatbot", zh: "AI 助手 / 聊天机器人" },
+    "Aucun": { en: "None", zh: "无" },
+    "Disponible 24h/24, 7j/7": { en: "Available 24/7", zh: "全天候 24/7 提供" },
+    "Comptable": { en: "Accountant", zh: "会计" },
+    "Un investissement, pas un coût.": { en: "An investment, not a cost.", zh: "这是投资，不是成本。" },
+    "Complet": { en: "Complete", zh: "完整版" },
+    "Le pilotage total de votre rentabilité.": { en: "Full control of your profitability.", zh: "全面掌控您的利润。" },
+    "/ mois": { en: "/ month", zh: "/ 月" },
+    "Factures illimitées": { en: "Unlimited invoices", zh: "无限发票" },
+    "Fiches techniques dynamiques": { en: "Dynamic recipe sheets", zh: "动态菜谱卡" },
+    "Intégration POS / Caisse": { en: "POS integration", zh: "POS / 收银集成" },
+    "Dashboard multisites": { en: "Multi-site dashboard", zh: "多店铺仪表板" },
+    "Rejoignez les 400+ restaurateurs qui ont arrêté de naviguer à vue et ont repris le contrôle de leurs marges.": { en: "Join 400+ restaurateurs who stopped flying blind and took back control of their margins.", zh: "加入 400+ 已停止盲目经营、重新掌控利润的餐厅老板。" },
+    "Réserver une démo gratuite": { en: "Book a free demo", zh: "预约免费演示" },
+    "Nous contacter": { en: "Contact us", zh: "联系我们" },
+    "Privacy Policy": { en: "Privacy Policy", zh: "隐私政策" },
+    "Terms of Service": { en: "Terms of Service", zh: "服务条款" },
+    "Contact Us": { en: "Contact Us", zh: "联系我们" },
+    "Documentation": { en: "Documentation", zh: "文档" },
+    "© 2026 Clareo Solutions. All rights reserved.": { en: "© 2026 Clareo Solutions. All rights reserved.", zh: "© 2026 Clareo Solutions. 版权所有。" }
+  };
+
+  function h(tag, className, child) {
+    const e = document.createElement(tag);
+    if (className) e.className = className;
+    if (child !== undefined) e.textContent = child;
+    return e;
+  }
+
+  const HTML = {
+    "hero-h1": {
+      fr: () => ['Optimisez la gestion', h('br', 'hidden sm:block'), ' de votre ', h('span', 'text-primary italic', 'restaurant'), '.'],
+      en: () => ['Optimize the management', h('br', 'hidden sm:block'), ' of your ', h('span', 'text-primary italic', 'restaurant'), '.'],
+      zh: () => ['优化您的', h('span', 'text-primary italic', '餐厅'), '管理。']
+    },
+    "problem-h2": {
+      fr: () => ["Aujourd'hui, piloter ses coûts en restaurant, c'est un ", h('span', 'text-error', 'cauchemar'), '.'],
+      en: () => ["Today, steering a restaurant's costs is a ", h('span', 'text-error', 'nightmare'), '.'],
+      zh: () => ['如今，餐厅成本管控就是一场', h('span', 'text-error', '噩梦'), '。']
+    },
+    "cta-h2": {
+      fr: () => ['Un restaurant qui fait 500 000 € de CA... ', h('br', 'hidden md:block'), " c'est ", h('span', 'text-primary-fixed', '15 000 € de plus'), ' par an dans sa poche.'],
+      en: () => ['A restaurant doing €500,000 in revenue… ', h('br', 'hidden md:block'), ' that\'s ', h('span', 'text-primary-fixed', '€15,000 more'), ' a year in its pocket.'],
+      zh: () => ['一家年营业额 500 000 € 的餐厅', h('br', 'hidden md:block'), '每年多赚', h('span', 'text-primary-fixed', ' 15 000 €'), '。']
+    }
+  };
+
+  const originals = new WeakMap();
+
+  function shouldSkip(el) {
+    if (el.nodeType !== 1) return false;
+    if (el.tagName === 'SCRIPT' || el.tagName === 'STYLE') return true;
+    if (el.classList && el.classList.contains('material-symbols-outlined')) return true;
+    if (el.id === 'lang-switcher' || (el.closest && el.closest('#lang-switcher'))) return true;
+    if (el.hasAttribute && el.hasAttribute('data-i18n-html')) return true;
+    return false;
+  }
+
+  function walk(node, cb) {
+    if (node.nodeType === 3) cb(node);
+    else if (node.nodeType === 1) {
+      if (shouldSkip(node)) return;
+      for (const child of node.childNodes) walk(child, cb);
+    }
+  }
+
+  const SUPPORTED = ['fr', 'en', 'zh'];
+
+  function setLang(lang) {
+    if (SUPPORTED.indexOf(lang) === -1) lang = 'fr';
+    document.documentElement.lang = lang;
+    walk(document.body, function (node) {
+      if (!originals.has(node)) originals.set(node, node.nodeValue);
+      const original = originals.get(node);
+      const trimmed = original.trim();
+      const entry = TEXT[trimmed];
+      if (lang !== 'fr' && entry && entry[lang]) {
+        node.nodeValue = original.replace(trimmed, entry[lang]);
+      } else {
+        node.nodeValue = original;
+      }
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (target) {
+      const key = target.getAttribute('data-i18n-html');
+      const t = HTML[key];
+      if (t && t[lang]) target.replaceChildren.apply(target, t[lang]());
+    });
+    document.querySelectorAll('#lang-switcher [data-lang]').forEach(function (b) {
+      b.classList.toggle('lang-active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    let saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    document.querySelectorAll('#lang-switcher [data-lang]').forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
+    });
+    setLang(SUPPORTED.indexOf(saved) !== -1 ? saved : 'fr');
+  });
+})();
+</script>
 </body></html>
